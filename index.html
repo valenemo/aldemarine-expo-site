@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ALDEMARINE — Контакты / Contacts</title>
+<link rel="icon" href="data:,">
+<style>
+  :root{
+    --navy:#0b2540; --navy2:#123a63; --accent:#1f8a70; --paper:#f7f8fa; --ink:#1a2430; --muted:#5b6b7c;
+    --card:#ffffff; --line:#e3e8ee; --err:#b4452f;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --paper:#0f1620; --ink:#e7edf3; --muted:#9fb0c0; --card:#16202c; --line:#243242; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.5}
+  header{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:32px 20px 38px}
+  .wrap{max-width:620px;margin:0 auto;padding:0 20px}
+  header .wrap{padding:0 20px}
+  h1{font-size:24px;margin:0 0 6px}
+  .tag{opacity:.85;font-size:14px;margin:0}
+  .lang{margin-top:16px}
+  .lang button{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:999px;padding:6px 14px;font-size:13px;cursor:pointer}
+  .lang button.active{background:#fff;color:var(--navy)}
+  .pill{display:inline-block;font-size:11px;letter-spacing:.04em;text-transform:uppercase;background:rgba(255,255,255,.15);padding:3px 9px;border-radius:999px;margin-bottom:10px}
+  main{padding:26px 0 50px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+  label.field{display:block;margin-bottom:16px}
+  label.field span{display:block;font-size:13px;color:var(--muted);margin-bottom:5px}
+  input[type=text], input[type=email], input[type=tel]{
+    width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:9px;background:var(--paper);color:var(--ink);font-size:15px;
+  }
+  input:focus{outline:2px solid var(--accent);outline-offset:1px}
+  fieldset{border:1px solid var(--line);border-radius:9px;padding:12px 14px;margin:0 0 16px}
+  legend{font-size:13px;color:var(--muted);padding:0 6px}
+  .opt{display:flex;align-items:flex-start;gap:9px;padding:6px 0;font-size:14.5px}
+  .opt input{margin-top:3px}
+  button[type=submit]{
+    width:100%;background:var(--accent);color:#fff;border:none;border-radius:9px;padding:14px;font-size:16px;font-weight:600;cursor:pointer;margin-top:4px;
+  }
+  button[type=submit]:active{opacity:.9}
+  .note{font-size:12px;color:var(--muted);margin-top:14px}
+  .thanks{display:none;background:rgba(31,138,112,.1);border:1px solid rgba(31,138,112,.35);border-radius:12px;padding:18px 20px;margin-bottom:18px;font-size:15px}
+  footer{padding:20px 20px 40px;text-align:center;color:var(--muted);font-size:12px}
+  [data-lang]{display:none}
+  [data-lang].show{display:inherit}
+  span[data-lang].show, label span[data-lang].show, legend[data-lang].show{display:block}
+  .opt span[data-lang].show{display:inline}
+  h1[data-lang].show, p[data-lang].show, div[data-lang].show{display:block}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <span class="pill">TransLogistica Kazakhstan 2026 · SilkWay Industrial Expo 2026</span>
+    <h1 data-lang="ru">ALDEMARINE</h1>
+    <h1 data-lang="en">ALDEMARINE</h1>
+    <p class="tag" data-lang="ru">Оставьте контакты — мы свяжемся с вами после выставки.</p>
+    <p class="tag" data-lang="en">Leave your details — we'll follow up after the expo.</p>
+    <div class="lang">
+      <button id="btn-ru" onclick="setLang('ru')">RU</button>
+      <button id="btn-en" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="thanks" id="thanks">
+    <div data-lang="ru">Спасибо! Контакты получены — мы свяжемся с вами в ближайшее время.</div>
+    <div data-lang="en">Thank you! Your details have been received — we'll be in touch soon.</div>
+  </div>
+
+  <div class="card">
+    <form id="leadform" action="https://formsubmit.co/manager@aldemarine.vnemo.co" method="POST">
+      <input type="hidden" name="_subject" value="ALDEMARINE — новая заявка с выставки / new expo lead">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://aldemarine.vnemo.co/?sent=1">
+
+      <label class="field">
+        <span data-lang="ru">Компания</span>
+        <span data-lang="en">Company</span>
+        <input type="text" name="Company" required>
+      </label>
+
+      <label class="field">
+        <span data-lang="ru">Имя</span>
+        <span data-lang="en">Name</span>
+        <input type="text" name="Name" required>
+      </label>
+
+      <label class="field">
+        <span data-lang="ru">Email</span>
+        <span data-lang="en">Email</span>
+        <input type="email" name="Email" required>
+      </label>
+
+      <label class="field">
+        <span data-lang="ru">Телефон / WhatsApp</span>
+        <span data-lang="en">Phone / WhatsApp</span>
+        <input type="tel" name="Phone" required>
+      </label>
+
+      <fieldset>
+        <legend data-lang="ru">Какой сервис от ALDEMARINE вас интересует? (можно выбрать несколько)</legend>
+        <legend data-lang="en">Which ALDEMARINE service(s) interest you? (select all that apply)</legend>
+
+        <label class="opt">
+          <input type="checkbox" name="Interest" value="Ship agency (vessel calls)">
+          <span><span data-lang="ru">Морское агентирование (суда захода)</span><span data-lang="en">Ship agency (vessel calls)</span></span>
+        </label>
+        <label class="opt">
+          <input type="checkbox" name="Interest" value="Cargo & documentation coordination">
+          <span><span data-lang="ru">Сопровождение грузов и документации</span><span data-lang="en">Cargo &amp; documentation coordination</span></span>
+        </label>
+        <label class="opt">
+          <input type="checkbox" name="Interest" value="Port & transport permits">
+          <span><span data-lang="ru">Портовые и транспортные разрешения</span><span data-lang="en">Port &amp; transport permits</span></span>
+        </label>
+        <label class="opt">
+          <input type="checkbox" name="Interest" value="Contractor & supplier coordination">
+          <span><span data-lang="ru">Координация подрядчиков и поставщиков</span><span data-lang="en">Contractor &amp; supplier coordination</span></span>
+        </label>
+        <label class="opt">
+          <input type="checkbox" name="Interest" value="Tender & qualification support">
+          <span><span data-lang="ru">Поддержка тендеров и квалификации</span><span data-lang="en">Tender &amp; qualification support</span></span>
+        </label>
+        <label class="opt">
+          <input type="checkbox" name="Interest" value="Cargo readiness checks">
+          <span><span data-lang="ru">Проверка готовности груза</span><span data-lang="en">Cargo readiness checks</span></span>
+        </label>
+        <label class="opt">
+          <input type="checkbox" name="Interest" value="Marine Warranty Survey coordination (via accredited partner)">
+          <span><span data-lang="ru">Координация Marine Warranty Survey (через аккредитованного партнёра)</span><span data-lang="en">Marine Warranty Survey coordination (via accredited partner)</span></span>
+        </label>
+        <label class="opt">
+          <input type="checkbox" name="Interest" id="chk-spareparts" value="Spare parts — engines / generators" onchange="toggleSpareParts(this.checked)">
+          <span><span data-lang="ru">Запчасти для двигателей / генераторов</span><span data-lang="en">Spare parts — engines / generators</span></span>
+        </label>
+        <label class="opt">
+          <input type="checkbox" name="Interest" value="Other">
+          <span><span data-lang="ru">Другое</span><span data-lang="en">Other</span></span>
+        </label>
+      </fieldset>
+
+      <fieldset id="spareparts-fields" hidden>
+        <legend data-lang="ru">Для быстрой котировки запчастей укажите данные оборудования</legend>
+        <legend data-lang="en">For a fast spare-parts quote, give the equipment details</legend>
+
+        <label class="field">
+          <span data-lang="ru">Производитель</span>
+          <span data-lang="en">Manufacturer</span>
+          <input type="text" name="Equipment_Manufacturer" id="f-manufacturer">
+        </label>
+        <label class="field">
+          <span data-lang="ru">Модель</span>
+          <span data-lang="en">Model</span>
+          <input type="text" name="Equipment_Model" id="f-model">
+        </label>
+        <label class="field">
+          <span data-lang="ru">Серийный номер</span>
+          <span data-lang="en">Serial number</span>
+          <input type="text" name="Equipment_SerialNumber" id="f-serial">
+        </label>
+        <label class="field">
+          <span data-lang="ru">Парт-номер детали (если известен)</span>
+          <span data-lang="en">Part number (if known)</span>
+          <input type="text" name="Part_Number">
+        </label>
+        <p class="note" data-lang="ru">Производитель, модель и серийный номер оборудования нужны для быстрой и точной котировки запчастей.</p>
+        <p class="note" data-lang="en">Manufacturer, model and serial number of the equipment are needed for a fast, accurate spare-parts quote.</p>
+      </fieldset>
+
+      <label class="field">
+        <span data-lang="ru">Комментарий (необязательно)</span>
+        <span data-lang="en">Comment (optional)</span>
+        <input type="text" name="Comment">
+      </label>
+
+      <button type="submit">
+        <span data-lang="ru">Отправить</span>
+        <span data-lang="en">Send</span>
+      </button>
+
+      <p class="note" data-lang="ru">Указание интереса не является договором и не гарантирует предоставление услуги, стоимость или сроки. ALDEMARINE — самостоятельная компания, отдельная от аккредитаций партнёров.</p>
+      <p class="note" data-lang="en">Expressing interest does not constitute a contract and does not guarantee service provision, pricing, or timelines. ALDEMARINE is an independent company, separate from its partners' own accreditations.</p>
+    </form>
+  </div>
+
+</main>
+
+<footer>
+  <span data-lang="ru">ALDEMARINE · Каспийский регион (Актау / Курык / Баутино / Атырау) · manager@aldemarine.vnemo.co · +7 701 225 6692</span>
+  <span data-lang="en">ALDEMARINE · Caspian region (Aktau / Kuryk / Bautino / Atyrau) · manager@aldemarine.vnemo.co · +7 701 225 6692</span>
+</footer>
+
+<script>
+function toggleSpareParts(on){
+  var box = document.getElementById('spareparts-fields');
+  box.hidden = !on;
+  ['f-manufacturer','f-model','f-serial'].forEach(function(id){
+    document.getElementById(id).required = on;
+  });
+}
+function setLang(l){
+  document.querySelectorAll('[data-lang]').forEach(function(el){
+    el.classList.toggle('show', el.getAttribute('data-lang')===l);
+  });
+  document.getElementById('btn-ru').classList.toggle('active', l==='ru');
+  document.getElementById('btn-en').classList.toggle('active', l==='en');
+  try{ localStorage.setItem('aldemarine_lang', l); }catch(e){}
+}
+(function(){
+  var l = 'ru';
+  try{ l = localStorage.getItem('aldemarine_lang') || 'ru'; }catch(e){}
+  var params = new URLSearchParams(location.search);
+  if(params.get('lang')) l = params.get('lang');
+  setLang(l);
+  if(params.get('sent')==='1'){
+    document.getElementById('thanks').style.display='block';
+    document.getElementById('leadform').style.display='none';
+  }
+})();
+</script>
+</body>
+</html>
