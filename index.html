@@ -74,7 +74,7 @@
   </div>
 
   <div class="card">
-    <form id="leadform" action="https://formsubmit.co/manager@aldemarine.vnemo.co" method="POST">
+    <form id="leadform" action="https://formsubmit.co/manager@aldemarine.vnemo.co" method="POST" enctype="multipart/form-data">
       <input type="hidden" name="_subject" value="ALDEMARINE — новая заявка с выставки / new expo lead">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_captcha" value="false">
@@ -113,12 +113,12 @@
           <span>Ship agency (vessel calls)</span>
         </label>
         <label class="opt">
-          <input type="checkbox" name="Interest" value="Cargo & documentation coordination">
-          <span>Cargo &amp; documentation coordination</span>
+          <input type="checkbox" name="Interest" value="Cargo documentation review (method statement, drawings, etc.)">
+          <span>Cargo documentation review (method statement, drawings, etc.)</span>
         </label>
         <label class="opt">
-          <input type="checkbox" name="Interest" value="Port & transport permits">
-          <span>Port &amp; transport permits</span>
+          <input type="checkbox" name="Interest" value="Port permits">
+          <span>Port permits</span>
         </label>
         <label class="opt">
           <input type="checkbox" name="Interest" value="Contractor & supplier coordination">
@@ -178,6 +178,12 @@
         <span data-lang="ru">Комментарий (необязательно)</span>
         <span data-lang="en">Comment (optional)</span>
         <input type="text" name="Comment">
+      </label>
+
+      <label class="field">
+        <span data-lang="ru">Прикрепить файл (необязательно) — фото таблички, спецификация и т.п.</span>
+        <span data-lang="en">Attach a file (optional) — nameplate photo, spec sheet, etc.</span>
+        <input type="file" name="attachment" accept="image/*,.pdf,.doc,.docx,.xls,.xlsx">
       </label>
 
       <button type="submit">
