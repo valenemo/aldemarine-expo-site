@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ALDEMARINE — Контакты / Contacts</title>
+<title>ALDEMARINE — Контакты</title>
 <link rel="icon" href="data:,">
 <style>
   :root{
@@ -211,6 +211,8 @@ function setLang(l){
   });
   document.getElementById('btn-ru').classList.toggle('active', l==='ru');
   document.getElementById('btn-en').classList.toggle('active', l==='en');
+  document.title = l==='ru' ? 'ALDEMARINE — Контакты' : 'ALDEMARINE — Contacts';
+  document.documentElement.lang = l;
   try{ localStorage.setItem('aldemarine_lang', l); }catch(e){}
 }
 (function(){
