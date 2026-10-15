@@ -86,6 +86,19 @@
     });
   }
 
+  // ---------- Services dropdown (touch / keyboard; hover and focus handled in CSS) ----------
+  function initSubnav() {
+    var subs = document.querySelectorAll(".has-sub");
+    subs.forEach(function (li) {
+      var btn = li.querySelector(".sub-toggle");
+      if (!btn) return;
+      function set(open) { li.classList.toggle("open", open); btn.setAttribute("aria-expanded", open ? "true" : "false"); }
+      btn.addEventListener("click", function (ev) { ev.stopPropagation(); set(!li.classList.contains("open")); });
+      document.addEventListener("click", function (ev) { if (!li.contains(ev.target)) set(false); });
+      document.addEventListener("keydown", function (ev) { if (ev.key === "Escape" && li.classList.contains("open")) { set(false); btn.focus(); } });
+    });
+  }
+
   // ---------- RFQ tabs (ARIA tabs pattern) ----------
   var RFQ_HASH_TO_PANEL = {
     supply: "panel-supply",
@@ -433,6 +446,7 @@
   document.addEventListener("DOMContentLoaded", function () {
     initLang();
     initNav();
+    initSubnav();
     initRfqTabs();
     initAudience();
     initForms();

@@ -462,3 +462,25 @@ button.nav-toggle{font-size:20px;line-height:1;font-family:inherit}
 
 /* release: request actions */
 .rfq-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}.rfq-actions .btn{margin:0}.rfq-out [data-act=copy][data-copied]::after{content:" ✓"}
+
+/* ---------- Services dropdown (child items) and footer contact lines ---------- */
+.nav-links .has-sub{position:relative;display:flex;align-items:center;gap:2px}
+.sub-toggle{background:transparent;border:0;color:#cfe3ee;cursor:pointer;font-size:13px;padding:6px 6px;line-height:1;font-family:inherit}
+.sub-toggle:hover,.sub-toggle:focus-visible{color:#fff}
+.nav-links .submenu{list-style:none;margin:0;padding:8px 0;position:absolute;left:0;top:100%;min-width:230px;background:var(--navy);border:1px solid #1c3147;border-radius:10px;box-shadow:0 14px 30px rgba(0,0,0,.3);display:none;z-index:30}
+.nav-links .submenu::before{content:"";position:absolute;left:0;right:0;top:-10px;height:10px}
+.nav-links .has-sub:hover>.submenu,.nav-links .has-sub:focus-within>.submenu,.nav-links .has-sub.open>.submenu{display:block}
+.nav-links .submenu li{display:block}
+.nav-links .submenu a{display:block;padding:9px 18px;border-bottom:0;white-space:nowrap}
+.nav-links .submenu a:hover{background:rgba(255,255,255,.06)}
+.footer-contact p{margin:0 0 4px;color:#8aa0ae;font-size:13px}
+.footer-contact a{color:#cfe3ee}
+@media (max-width:1260px){
+  .nav-links .has-sub{display:block;width:100%}
+  .nav-links .has-sub>a{display:block}
+  .sub-toggle{display:none}
+  .nav-links .submenu,.nav-links .has-sub:hover>.submenu{display:block;position:static;min-width:0;background:transparent;border:0;box-shadow:none;padding:0 0 4px 16px}
+  .nav-links .submenu::before{display:none}
+  .nav-links .submenu a{padding:9px 0;font-weight:500;font-size:13.5px;border-bottom:1px solid rgba(255,255,255,.06)}
+  .site-header.nav-open .nav-links{max-height:760px}
+}

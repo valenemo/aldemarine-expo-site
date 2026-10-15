@@ -36,13 +36,15 @@
     <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Menu" data-label-ru="Меню" data-label-en="Menu">&#9776;</button>
     <nav class="nav-wrap" aria-label="Main navigation" data-label-ru="Основная навигация" data-label-en="Main navigation">
     <ul class="nav-links" id="primary-nav">
-      <li><a href="index.html"><span data-lang="ru">Главная</span><span data-lang="en">Home</span></a></li>
-      <li><a href="services.html"><span data-lang="ru">Услуги</span><span data-lang="en">Services</span></a></li>
-      <li><a href="marine-supply.html"><span data-lang="ru">Marine Supply</span><span data-lang="en">Marine Supply</span></a></li>
-      <li><a href="marine-surveys.html" class="active" aria-current="page"><span data-lang="ru">Сюрвеи и MWS</span><span data-lang="en">Surveys & MWS</span></a></li>
-      <li><a href="class-registry.html"><span data-lang="ru">Класс и регистр</span><span data-lang="en">Class & Registry</span></a></li>
-      <li><a href="project-cargo.html"><span data-lang="ru">Проектные грузы</span><span data-lang="en">Project Cargo</span></a></li>
-      <li><a href="custom-software.html"><span data-lang="ru">Морское ПО</span><span data-lang="en">Maritime Software</span></a></li>
+      <li class="has-sub"><a href="services.html"><span data-lang="ru">Услуги</span><span data-lang="en">Services</span></a><button type="button" class="sub-toggle" aria-expanded="false" aria-label="Submenu / Подменю"><span aria-hidden="true">&#9662;</span></button>
+        <ul class="submenu">
+          <li><a href="marine-supply.html"><span data-lang="ru">Marine Supply</span><span data-lang="en">Marine Supply</span></a></li>
+          <li><a href="marine-surveys.html"><span data-lang="ru">Сюрвеи и MWS</span><span data-lang="en">Surveys &amp; MWS</span></a></li>
+          <li><a href="class-registry.html"><span data-lang="ru">Класс и регистр</span><span data-lang="en">Class &amp; Registry</span></a></li>
+          <li><a href="project-cargo.html"><span data-lang="ru">Проектные грузы</span><span data-lang="en">Project Cargo</span></a></li>
+          <li><a href="custom-software.html"><span data-lang="ru">Морское ПО</span><span data-lang="en">Maritime Software</span></a></li>
+        </ul>
+      </li>
       <li><a href="about.html"><span data-lang="ru">О компании</span><span data-lang="en">About</span></a></li>
       <li class="nav-mobile-only"><a href="rfq.html"><span data-lang="ru">Запросить КП</span><span data-lang="en">Request a Quote</span></a></li>
     </ul>
@@ -113,8 +115,11 @@
       </div>
     </div>
     <div class="footer-legal">
-      <div data-lang="ru"><p>&copy; 2026 ALDEMARINE. <a href="mailto:frontdesk@aldemarine.vnemo.co">frontdesk@aldemarine.vnemo.co</a> &middot; <a href="tel:+77012256692">+7 701 225 6692</a></p></div>
-<div data-lang="en"><p>&copy; 2026 ALDEMARINE. <a href="mailto:frontdesk@aldemarine.vnemo.co">frontdesk@aldemarine.vnemo.co</a> &middot; <a href="tel:+77012256692">+7 701 225 6692</a></p></div>
+      <div class="footer-contact">
+        <p>&copy; 2026 ALDEMARINE LLP</p>
+        <p><a href="mailto:frontdesk@aldemarine.vnemo.co">frontdesk@aldemarine.vnemo.co</a></p>
+        <p><a href="tel:+77012256692">+7 701 225 6692</a></p>
+      </div>
       <div data-lang="ru"><p class="footer-disclaimer">Marine Warranty Survey оказывается в пределах подтверждённой квалификации назначенного сюрвейера. Любое формальное Certificate of Approval, одобрение класса или признание страховщиком остаётся на усмотрение и решение соответствующего утверждающего органа, страховщика или назначенной организации. Инженерные расчёты предоставляются через квалифицированных инженерных партнёров. Окончательное одобрение классификационного общества, администрации флага или регистра принимает соответствующий орган.</p></div>
 <div data-lang="en"><p class="footer-disclaimer">Marine Warranty Survey is delivered within the confirmed scope of the appointed surveyor. Any formal Certificate of Approval, class approval or insurer acceptance remains subject to the requirements and decision of the relevant approving authority, insurer or appointed organisation. Engineering calculations are delivered through qualified engineering partners. Final approval by a classification society, flag administration or registry rests with that competent authority.</p></div>
     </div>
