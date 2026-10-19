@@ -484,3 +484,33 @@ button.nav-toggle{font-size:20px;line-height:1;font-family:inherit}
   .nav-links .submenu a{padding:9px 0;font-weight:500;font-size:13.5px;border-bottom:1px solid rgba(255,255,255,.06)}
   .site-header.nav-open .nav-links{max-height:760px}
 }
+
+/* ---------- Marine Supply request assistant (button mode) ---------- */
+.sa-root{position:fixed;right:16px;bottom:16px;z-index:45;font-family:inherit}
+.sa-launcher{border:0;background:var(--navy);color:#fff;font:600 14px/1 inherit;padding:11px 16px;border-radius:99px;box-shadow:0 6px 20px rgba(15,30,46,.28);cursor:pointer}
+.sa-launcher:hover{background:var(--brand-navy)}
+.sa-launcher:focus-visible,.sa-btn:focus-visible,.sa-choice:focus-visible,.sa-link:focus-visible,.sa-close:focus-visible,.sa-field input:focus-visible{outline:3px solid var(--brand-cyan);outline-offset:2px}
+.sa-panel{position:absolute;right:0;bottom:52px;width:min(380px,calc(100vw - 32px));max-height:min(620px,calc(100vh - 100px));overflow:auto;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:var(--radius-lg);box-shadow:0 18px 50px rgba(15,30,46,.3);padding:16px}
+.sa-panel[hidden]{display:none}
+.sa-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:10px}
+.sa-step{font-size:12px;color:var(--muted)}
+.sa-title{margin:2px 0 0;font-size:18px}
+.sa-close{border:0;background:none;font-size:24px;line-height:1;cursor:pointer;color:var(--muted);padding:2px 8px}
+.sa-hint{font-size:14px;color:var(--muted);margin:0 0 10px}
+.sa-choices{display:grid;gap:8px}.sa-choices.row{grid-template-columns:repeat(3,1fr)}
+.sa-choice{text-align:left;border:1px solid var(--line);background:var(--sand);color:var(--ink);padding:11px 12px;border-radius:var(--radius-btn);font:inherit;cursor:pointer}
+.sa-choice.small{text-align:center;padding:9px 6px;font-size:14px}
+.sa-choice.on,.sa-choice:hover{border-color:var(--brand-blue);background:#e9f3f9}
+.sa-field{display:grid;gap:4px;margin:0 0 10px;font-size:14px}.sa-field span,.sa-label{font-weight:600;font-size:13px}
+.sa-field input{font:inherit;padding:9px 10px;border:1px solid var(--line);border-radius:var(--radius-btn);background:#fff;min-height:40px}
+.sa-item{border:1px solid var(--line);border-radius:var(--radius-btn);padding:8px 10px 2px;margin:0 0 10px}.sa-item legend{font-size:13px;font-weight:700;padding:0 4px}
+.sa-link{border:0;background:none;color:var(--brand-navy);font:600 14px inherit;padding:4px 0;margin:0 0 8px;cursor:pointer;text-decoration:underline}
+.sa-actions{display:flex;justify-content:space-between;gap:8px;margin-top:10px}
+.sa-btn{display:inline-block;border:0;background:var(--copper);color:#fff;font:600 14px inherit;padding:10px 16px;border-radius:var(--radius-btn);cursor:pointer;text-decoration:none}
+.sa-btn:hover{background:#774b1c}.sa-btn.ghost{background:none;color:var(--ink);border:1px solid var(--line)}.sa-btn[disabled]{opacity:.6;cursor:wait}
+.sa-err{color:#a12b2b;font-size:13px;min-height:1em;margin:6px 0 0}
+.sa-ok{font-size:15px;margin:0 0 8px}
+.sa-sum{display:grid;gap:2px;margin:0 0 10px;font-size:14px}.sa-sum dt{font-weight:700;margin-top:6px}.sa-sum dd{margin:0}.sa-sum ul{margin:0;padding-left:18px}
+.sa-consent{display:flex;gap:8px;align-items:flex-start;font-size:13px}
+@media (max-width:820px){.sa-root{bottom:70px}}
+@media (prefers-reduced-motion:reduce){.sa-launcher,.sa-btn{transition:none}}
