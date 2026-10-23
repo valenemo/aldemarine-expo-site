@@ -521,3 +521,10 @@ button.nav-toggle{font-size:20px;line-height:1;font-family:inherit}
 .sms-stats div{min-width:120px}.sms-stats b{display:block;font-size:24px;line-height:1.2}.sms-stats span{font-size:13px;opacity:.8}
 .sms-stats b span{font-size:inherit;opacity:1}
 .sms-note{font-size:13px;color:var(--muted);max-width:760px;margin:18px 0 0}
+
+/* Touch targets on small screens: stand-alone links and buttons at least ~40px tall (WCAG 2.5.8 asks for 24px) */
+@media (max-width:820px){
+  .site-footer li a,.footer-contact p a,.audience-card .links a,.breadcrumb a{display:inline-block;padding:10px 0}
+  .cta{display:inline-flex;align-items:center;min-height:44px}
+  .langs button{min-height:36px}
+}

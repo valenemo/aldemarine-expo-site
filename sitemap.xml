@@ -1,14 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://aldemarine.vnemo.co/</loc></url>
-  <url><loc>https://aldemarine.vnemo.co/services.html</loc></url>
-  <url><loc>https://aldemarine.vnemo.co/marine-supply.html</loc></url>
-  <url><loc>https://aldemarine.vnemo.co/marine-surveys.html</loc></url>
-  <url><loc>https://aldemarine.vnemo.co/mws.html</loc></url>
-  <url><loc>https://aldemarine.vnemo.co/class-registry.html</loc></url>
-  <url><loc>https://aldemarine.vnemo.co/project-cargo.html</loc></url>
-  <url><loc>https://aldemarine.vnemo.co/custom-software.html</loc></url>
-  <url><loc>https://aldemarine.vnemo.co/about.html</loc></url>
-  <url><loc>https://aldemarine.vnemo.co/contact.html</loc></url>
-  <url><loc>https://aldemarine.vnemo.co/rfq.html</loc></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url><loc>https://aldemarine.vnemo.co/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aldemarine.vnemo.co/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aldemarine.vnemo.co/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aldemarine.vnemo.co/"/>
+  </url>
+  <url><loc>https://aldemarine.vnemo.co/en/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aldemarine.vnemo.co/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aldemarine.vnemo.co/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aldemarine.vnemo.co/"/>
+  </url>
+  <url><loc>https://aldemarine.vnemo.co/services.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aldemarine.vnemo.co/services.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aldemarine.vnemo.co/en/services.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aldemarine.vnemo.co/services.html"/>
+  </url>
+  <url><loc>https://aldemarine.vnemo.co/en/services.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aldemarine.vnemo.co/services.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aldemarine.vnemo.co/en/services.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aldemarine.vnemo.co/services.html"/>
+  </url>
+  <url><loc>https://aldemarine.vnemo.co/marine-supply.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aldemarine.vnemo.co/marine-supply.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aldemarine.vnemo.co/en/marine-supply.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aldemarine.vnemo.co/marine-supply.html"/>
+  </url>
+  <url><loc>https://aldemarine.vnemo.co/en/marine-supply.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aldemarine.vnemo.co/marine-supply.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aldemarine.vnemo.co/en/marine-supply.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aldemarine.vnemo.co/marine-supply.html"/>
+  </url>
+  <url><loc>https://aldemarine.vnemo.co/marine-surveys.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aldemarine.vnemo.co/marine-surveys.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aldemarine.vnemo.co/en/marine-surveys.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aldemarine.vnemo.co/marine-surveys.html"/>
+  </url>
+  <url><loc>https://aldemarine.vnemo.co/en/marine-surveys.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aldemarine.vnemo.co/marine-surveys.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aldemarine.vnemo.co/en/marine-surveys.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aldemarine.vnemo.co/marine-surveys.html"/>
+  </url>
+  <url><loc>https://aldemarine.vnemo.co/mws.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aldemarine.vnemo.co/mws.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aldemarine.vnemo.co/en/mws.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aldemarine.vnemo.co/mws.html"/>
+  </url>
+  <url><loc>https://aldemarine.vnemo.co/en/mws.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aldemarine.vnemo.co/mws.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aldemarine.vnemo.co/en/mws.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aldemarine.vnemo.co/mws.html"/>
+  </url>
+  <url><loc>https://aldemarine.vnemo.co/class-registry.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aldemarine.vnemo.co/class-registry.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aldemarine.vnemo.co/en/class-registry.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aldemarine.vnemo.co/class-registry.html"/>
+  </url>
+  <url><loc>https://aldemarine.vnemo.co/en/class-registry.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aldemarine.vnemo.co/class-registry.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aldemarine.vnemo.co/en/class-registry.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aldemarine.vnemo.co/class-registry.html"/>
+  </url>
+  <url><loc>https://aldemarine.vnemo.co/project-cargo.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aldemarine.vnemo.co/project-cargo.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aldemarine.vnemo.co/en/project-cargo.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aldemarine.vnemo.co/project-cargo.html"/>
+  </url>
+  <url><loc>https://aldemarine.vnemo.co/en/project-cargo.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aldemarine.vnemo.co/project-cargo.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aldemarine.vnemo.co/en/project-cargo.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aldemarine.vnemo.co/project-cargo.html"/>
+  </url>
+  <url><loc>https://aldemarine.vnemo.co/custom-software.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aldemarine.vnemo.co/custom-software.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aldemarine.vnemo.co/en/custom-software.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aldemarine.vnemo.co/custom-software.html"/>
+  </url>
+  <url><loc>https://aldemarine.vnemo.co/en/custom-software.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aldemarine.vnemo.co/custom-software.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aldemarine.vnemo.co/en/custom-software.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aldemarine.vnemo.co/custom-software.html"/>
+  </url>
+  <url><loc>https://aldemarine.vnemo.co/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aldemarine.vnemo.co/about.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aldemarine.vnemo.co/en/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aldemarine.vnemo.co/about.html"/>
+  </url>
+  <url><loc>https://aldemarine.vnemo.co/en/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aldemarine.vnemo.co/about.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aldemarine.vnemo.co/en/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aldemarine.vnemo.co/about.html"/>
+  </url>
+  <url><loc>https://aldemarine.vnemo.co/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aldemarine.vnemo.co/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aldemarine.vnemo.co/en/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aldemarine.vnemo.co/contact.html"/>
+  </url>
+  <url><loc>https://aldemarine.vnemo.co/en/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aldemarine.vnemo.co/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aldemarine.vnemo.co/en/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aldemarine.vnemo.co/contact.html"/>
+  </url>
+  <url><loc>https://aldemarine.vnemo.co/rfq.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aldemarine.vnemo.co/rfq.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aldemarine.vnemo.co/en/rfq.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aldemarine.vnemo.co/rfq.html"/>
+  </url>
+  <url><loc>https://aldemarine.vnemo.co/en/rfq.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aldemarine.vnemo.co/rfq.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aldemarine.vnemo.co/en/rfq.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aldemarine.vnemo.co/rfq.html"/>
+  </url>
 </urlset>

@@ -44,8 +44,36 @@
 
   window.aldemarineRefreshLang = function () { setLang(document.documentElement.getAttribute("data-lang-active") || "ru", false); };
 
+  // Pages that exist in both languages carry data-page-lang and <link rel="alternate" hreflang>.
+  // On those pages the language buttons navigate between /page.html (ru) and /en/page.html (en),
+  // so each language has its own address that search engines can index.
+  function pageLang() {
+    var v = document.documentElement.getAttribute("data-page-lang");
+    return v === "ru" || v === "en" ? v : null;
+  }
+
+  function altPath(lang) {
+    var link = document.querySelector('link[rel="alternate"][hreflang="' + lang + '"]');
+    if (!link) return null;
+    try { return new URL(link.getAttribute("href"), window.location.href).pathname; } catch (e) { return null; }
+  }
+
+  function remember(lang) {
+    try { window.localStorage.setItem(LANG_STORAGE_KEY, lang); } catch (e) { /* storage unavailable */ }
+  }
+
+  function goToLang(lang) {
+    var path = altPath(lang);
+    if (!path) return false;
+    remember(lang);
+    window.location.href = path + (window.location.hash || "");
+    return true;
+  }
+
   function initialLang() {
-    // Priority: ?lang= in the URL > language remembered from a previous visit > Russian.
+    // A bilingual-address page always shows its own language. Otherwise:
+    // ?lang= in the URL > language remembered from a previous visit > Russian.
+    if (pageLang()) return pageLang();
     try {
       var fromUrl = new URLSearchParams(window.location.search).get("lang");
       if (fromUrl === "ru" || fromUrl === "en") return fromUrl;
@@ -57,12 +85,27 @@
     return "ru";
   }
 
+  function wantedLangOnRussianPage() {
+    // Returning English visitors (or an old ?lang=en link) are sent to the English page.
+    // Crawlers have no stored preference, so they always see the Russian page as served.
+    try {
+      var fromUrl = new URLSearchParams(window.location.search).get("lang");
+      if (fromUrl === "en" || fromUrl === "ru") return fromUrl;
+      return window.localStorage.getItem(LANG_STORAGE_KEY);
+    } catch (e) { return null; }
+  }
+
   function initLang() {
     var buttons = document.querySelectorAll("[data-set-lang]");
     if (!buttons.length) return;
     buttons.forEach(function (b) {
-      b.addEventListener("click", function () { setLang(b.dataset.setLang); });
+      b.addEventListener("click", function () {
+        var target = b.dataset.setLang;
+        if (pageLang() && target !== pageLang() && goToLang(target)) return;
+        setLang(target);
+      });
     });
+    if (pageLang() === "ru" && wantedLangOnRussianPage() === "en" && goToLang("en")) return;
     setLang(initialLang(), false);
   }
 
