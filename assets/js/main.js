@@ -207,9 +207,9 @@
 
   // ---------- Forms ----------
   // All forms: the site transmits nothing; the request is prepared in the browser and the visitor
-  // sends it by email / WhatsApp or copies the text.
+  // sends it by email or copies the text.
   var FORM_NAMES = { "contact": "Contact message", "marine-supply": "Marine Supply RFQ", "marine-survey": "Marine survey", "mws": "MWS", "class-registry": "Class & registry documentation", "project": "Project / general request", "custom-software": "Custom maritime software", "partner": "Supplier / partner" };
-  var REQ_MAIL = "frontdesk@aldemarine.vnemo.co", REQ_WA = "77012256692";
+  var REQ_MAIL = "frontdesk@aldemarine.vnemo.co";
   function requestText(form, name) {
     var lines = ["ALDEMARINE website request — " + name, ""];
     form.querySelectorAll(".field").forEach(function (f) {
@@ -228,9 +228,8 @@
     var name = FORM_NAMES[form.getAttribute("data-aldemarine-form")] || "request";
     var text = requestText(form, name);
     var mailBody = text.length > 1700 ? text.slice(0, 1700) + "\n[…] (full text: use the Copy button on the site)" : text;
-    var mail = out.querySelector('[data-act="mail"]'), wa = out.querySelector('[data-act="wa"]'), cp = out.querySelector('[data-act="copy"]');
+    var mail = out.querySelector('[data-act="mail"]'), cp = out.querySelector('[data-act="copy"]');
     if (mail) mail.href = "mailto:" + REQ_MAIL + "?subject=" + encodeURIComponent("ALDEMARINE — " + name) + "&body=" + encodeURIComponent(mailBody);
-    if (wa) wa.href = "https://wa.me/" + REQ_WA + "?text=" + encodeURIComponent(text.length > 1500 ? text.slice(0, 1500) + " […]" : text);
     if (cp) cp.onclick = function () {
       var done = function () { cp.setAttribute("data-copied", "1"); };
       if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, function () {});
