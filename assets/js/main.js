@@ -297,6 +297,25 @@
     function val(id) { var f = el(id); return f ? f.value.trim() : ""; }
     function totalQty() { return basket.reduce(function (sum, row) { return sum + Number(row.quantity || 1); }, 0); }
 
+    // Public part families (generated from the private catalogue; allow-listed fields only)
+    var fam = window.ALDEMARINE_SUPPLY_FAMILIES;
+    if (fam && fam.families && !data.familiesMerged) {
+      data.familiesMerged = true;
+      var byCat = {};
+      fam.families.forEach(function (f) { (byCat[f.category] = byCat[f.category] || []).push(f); });
+      var KIND = { A: "Known position", B: "Product family", C: "Sourcing request" };
+      fam.categories.forEach(function (c) {
+        data.categories.push({ id: "fam-" + c.code, name: c.name_en, families: (byCat[c.code] || []).map(function (f) {
+          var vs = f.variants && f.variants.length ? f.variants : [null];
+          return { name: f.family_name, items: vs.map(function (v) {
+            var pn = v && v.part_number ? v.part_number : "", mf = v && v.manufacturer ? v.manufacturer.split(" (")[0] : "";
+            return { id: v ? v.variant_id : f.family_id, name: v && v.variant_name ? v.variant_name : f.family_name,
+              type: KIND[f.card_type] || KIND.C, kind: "family", oem: mf, partNumber: pn, trigger: f.basis,
+              specification: [f.short_description, mf ? "Maker: " + mf + "." : "", pn ? "Part number: " + pn + "." : ""].filter(Boolean).join(" ") };
+          }) };
+        }) });
+      });
+    }
     var items = [];
     data.categories.forEach(function (category) {
       category.families.forEach(function (family) { family.items.forEach(function (item) { items.push({ category: category, family: family, item: item }); }); });
@@ -334,7 +353,7 @@
       return '<article class="catalog-card"><div class="catalog-card-top"><span class="status-chip">' + bi("Нужен RFQ", "RFQ required") + '</span><span class="catalog-type">' + esc(i.type) + '</span></div>' +
         '<h3 id="card-' + esc(i.id) + '">' + esc(i.name) + '</h3><p class="catalog-family">' + esc(entry.category.name) + ' · ' + esc(entry.family.name) + '</p>' +
         '<dl><div><dt>' + bi("Спецификация", "Specification") + '</dt><dd>' + esc(i.specification) + '</dd></div>' +
-        '<div><dt>' + bi("Типовой интервал обслуживания", "Typical service interval") + '</dt><dd>' + esc(i.trigger) + '</dd></div></dl>' +
+        '<div><dt>' + (i.kind === "family" ? bi("Основание", "Basis") : bi("Типовой интервал обслуживания", "Typical service interval")) + '</dt><dd>' + esc(i.trigger) + '</dd></div></dl>' +
         '<div class="catalog-actions"><button class="btn btn-small btn-accent' + (added ? ' is-added' : '') + '" type="button" data-add-item="' + esc(i.id) + '" aria-describedby="card-' + esc(i.id) + '">' + (added ? bi("Добавлено · ещё +1", "Added · add one more") : bi("Добавить в RFQ", "Add to RFQ")) + '</button></div></article>';
     }
     var shownCount = 0;
@@ -351,7 +370,7 @@
       var found = items.find(function (entry) { return entry.item.id === button.dataset.addItem; }); if (!found) return;
       var existing = basket.find(function (row) { return row.id === found.item.id; });
       if (existing) existing.quantity += 1;
-      else basket.push({ id: found.item.id, name: found.item.name, family: found.family.name, category: found.category.name, specification: found.item.specification, quantity: 1, oem: "", model: "", partNumber: "", notes: "" });
+      else basket.push({ id: found.item.id, name: found.item.name, family: found.family.name, category: found.category.name, specification: found.item.specification, quantity: 1, oem: found.item.oem || "", model: "", partNumber: found.item.partNumber || "", notes: "" });
       saveBasket(); renderBasket();
       button.classList.add("is-added"); button.innerHTML = bi("Добавлено · ещё +1", "Added · add one more"); refreshLang();
       say("Добавлено: " + found.item.name + ". Всего в запросе: " + totalQty() + ".", "Added: " + found.item.name + ". Total in request: " + totalQty() + ".");
